@@ -33,3 +33,12 @@
 
 
 build/*
+doc/docs/*
+doc/xml/*
+doc/html/*
+doc/CMakeFiles/*
+doc/Makefile
+doc/CMakeDoxygenDefaults.cmake
+doc/CMakeDoxyfile.in
+doc/CMakeCache.txt
+doc/cmake_install.cmake

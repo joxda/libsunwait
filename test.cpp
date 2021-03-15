@@ -28,17 +28,11 @@
 *******************************************************************************/
 
 #include <cstdio>
-
-
 #include "libsunwait.hpp"
-
-using namespace std;
-
 
 int main (int argc, char *argv[])
 {
     SunWait sw;
-    //sw.debug = true;
     int exitCode = sw.poll();
     if (exitCode == EXIT_DAY)   printf ("DAY\n");
     else if (exitCode == EXIT_NIGHT) printf ("NIGHT\n");

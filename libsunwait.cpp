@@ -44,10 +44,7 @@
 // TLJ  2020-10-03  0.9  Fix build on osx
 //
 
-//#include <stdio.h>
-//#include <stdlib.h>
 #include <iostream>
-//#include <time.h>
 #include <cstring>
 #include <math.h>
 
@@ -180,7 +177,7 @@ inline unsigned long daysSince2000 (const time_t *pTimet)
 }
 
 
-inline  boolean myIsNumber (const char *arg)
+inline  bool myIsNumber (const char *arg)
 {
     bool digitSet = false;
     for (int i = 0; ; i++)
@@ -349,7 +346,7 @@ inline  time_t getMidnightUTC (const time_t *pTimet)
 }
 
 
-void SunWait::setCoordinates(double lon, double lat)
+void SunWait::setCoordinates(double lat, double lon)
 {
     latitude = fixLatitude(lat);
     longitude = fixLongitude(lon);
@@ -691,7 +688,7 @@ int SunWait::poll (const time_t ttime)
 
 
 
-time_t SunWait::targetTime(int yearInt, int monInt, int mdayInt)
+time_t SunWait::targetTime(int year, int mon, int mday)
 {
     /*
     ** Get: Target Date
@@ -715,36 +712,36 @@ time_t SunWait::targetTime(int yearInt, int monInt, int mdayInt)
     // Parse "target" year, month and day [adjust target]
     //
 
-    if (yearInt != NOT_SET)
+    if (year != NOT_SET)
     {
-        if (yearInt < 0 || yearInt > 99)
+        if (year < 0 || year > 99)
         {
-            printf ("Error: \"Year\" must be between 0 and 99: %u\n", yearInt);
+            printf ("Error: \"Year\" must be between 0 and 99: %u\n", year);
             exit (EXIT_ERROR);
         }
-        targetTm.tm_year = yearInt + 100;
+        targetTm.tm_year = year + 100;
     }
     if (debug) printf ("Debug: Target  year set to: %u\n", targetTm.tm_year);
 
-    if (monInt != NOT_SET)
+    if (__FINITE_MATH_ONLY__ != NOT_SET)
     {
-        if (monInt < 1 || monInt > 12)
+        if (mon < 1 || mon > 12)
         {
-            printf ("Error: \"Month\" must be between 1 and 12: %u\n", monInt);
+            printf ("Error: \"Month\" must be between 1 and 12: %u\n", mon);
             exit (EXIT_ERROR);
         }
-        targetTm.tm_mon = monInt - 1; // We need month 0 to 11, not 1 to 12
+        targetTm.tm_mon = mon - 1; // We need month 0 to 11, not 1 to 12
     }
     if (debug) printf ("Debug: Target   mon set to: %u\n", targetTm.tm_mon);
 
-    if (mdayInt != NOT_SET)
+    if (mday != NOT_SET)
     {
-        if (mdayInt < 1 || mdayInt > 31)
+        if (mday < 1 || mday > 31)
         {
-            printf ("Error: \"Day of month\" must be between 1 and 31: %u\n", mdayInt);
+            printf ("Error: \"Day of month\" must be between 1 and 31: %u\n", mday);
             exit (EXIT_ERROR);
         }
-        targetTm.tm_mday = mdayInt;
+        targetTm.tm_mday = mday;
     }
     if (debug) printf ("Debug: Target  mday set to: %u\n", targetTm.tm_mday);
 
@@ -790,7 +787,7 @@ time_t SunWait::targetTime(int yearInt, int monInt, int mdayInt)
 ** Exit immediately if its a polar day or midnight sun (including offset).
 */
 
-int SunWait::wait (bool reportSunrise, bool reportSunset, long *waitptr)
+int SunWait::wait (bool reportSunrise, bool reportSunset, unsigned long *waitptr)
 {
     //
     // Calculate start/end of twilight for given twilight type/angle.
@@ -989,7 +986,7 @@ int SunWait::wait (bool reportSunrise, bool reportSunset, long *waitptr)
     return EXIT_OK;
 }
 
-bool SunWait::setCoordinates(const char *lon, const char *lat)
+bool SunWait::setCoordinates(const char *lat, const char *lon)
 {
     bool parse = isBearing(lat);
     parse = parse && isBearing(lon);
