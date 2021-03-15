@@ -1,0 +1,13 @@
+
+theme: jekyll-theme-hacker
+
+title: "libsunwait"
+description: Library port of subwait.
+
+
+include:
+  - _static
+  - _sources
+  
+plugins:
+  - jekyll-seo-tag
