@@ -48,7 +48,7 @@
 //#include <stdlib.h>
 #include <iostream>
 //#include <time.h>
-//#include <cstring>
+#include <cstring>
 #include <math.h>
 
 #include <thread>
