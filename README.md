@@ -8,3 +8,7 @@ It provide a class with functions to wait for sunrise and set, poll whether
 it is day or night, list sunrise and set times. Instead of sunrise or set
 corresponding twilight times can be considered, as well as times offset 
 by a fixed amount from any of these.
+
+## API documentation
+
+https://joxda.github.io/libsunwait/doc/ 
