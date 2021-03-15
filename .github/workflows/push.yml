@@ -24,8 +24,25 @@ jobs:
           cd build
           cmake ..
           make
+          make package
+
       - name: archive results
         uses: actions/upload-artifact@v1
         with:
           name: libsunwait-${{ matrix.os }}
           path: build/
+
+      - name: archive results mac
+        if: runner.os !='Linux' 
+        uses: actions/upload-artifact@v1
+        with:
+          name: libsunwait-1.0.0-${{ matrix.os }}
+          path: build/*sunwait-1.0.0-Darwin.tar.gz
+
+      - name: archive results linux
+        if:  runner.os =='Linux' 
+        uses: actions/upload-artifact@v1
+        with:
+          name: libsunwait-1.0.0-${{ matrix.os }}
+          path: build/*sunwait-1.0.0-${{ runner.os }}.tar.gz
+ 
