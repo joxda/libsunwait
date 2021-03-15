@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest] #, macos-latest]
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -26,23 +26,17 @@ jobs:
           make
           make package
 
-      - name: archive results
-        uses: actions/upload-artifact@v1
-        with:
-          name: libsunwait-${{ matrix.os }}
-          path: build/
-
       - name: archive results mac
         if: runner.os !='Linux' 
         uses: actions/upload-artifact@v1
         with:
           name: libsunwait-1.0.0-${{ matrix.os }}
-          path: build/*sunwait-1.0.0-Darwin.tar.gz
+          path: build/sunwait-1.0.0-Darwin.tar.gz
 
       - name: archive results linux
         if:  runner.os =='Linux' 
         uses: actions/upload-artifact@v1
         with:
           name: libsunwait-1.0.0-${{ matrix.os }}
-          path: build/*sunwait-1.0.0-${{ runner.os }}.tar.gz
+          path: build/sunwait-1.0.0-${{ runner.os }}.tar.gz
  
