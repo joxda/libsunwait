@@ -159,7 +159,7 @@ class SunWait
      * @brief Construct a new SunWait object with the requested geographical coordinates and the default twilight angle
      * 
      * @param lat Geographical latitude in decimal degrees (N positive, S negative)
-     * @param lon Geographical longitude in decimale degrees (E positive, W negative)
+     * @param lon Geographical longitude in decimal degrees (E positive, W negative)
      */
         SunWait(double lat, double lon)
         {
@@ -186,7 +186,7 @@ class SunWait
      * @brief Construct a new SunWait object with the requested geographical coordinates and twilight angle
      * 
      * @param lat Geographical latitude in decimal degrees (N positive, S negative)
-     * @param lon Geographical longitude in decimale degrees (E positive, W negative)
+     * @param lon Geographical longitude in decimal degrees (E positive, W negative)
      * @param angle Twilight angle (in decimal degrees, negative for the Sun below horizon)
      */
         SunWait(double lat, double lon, double angle) :  twilightAngle{angle}
