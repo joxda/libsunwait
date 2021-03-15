@@ -172,8 +172,8 @@ class SunWait
      * 
      * With thise versions a char* is used and the library attempts to parse the information.
      * 
-     * @param lat 
-     * @param lon 
+     * @param lat Geographical latitude 
+     * @param lon Geographical longitude 
      */
         SunWait(const char *lat, const char *lon)
         {
@@ -205,8 +205,8 @@ class SunWait
      * 
      * With thise versions a char* is used and the library attempts to parse the information.
      * 
-     * @param lat 
-     * @param lon 
+     * @param lat Geographical latitude 
+     * @param lon Geographical longitude
      * @param angle Twilight angle (in decimal degrees, negative for the Sun below horizon)
      */
         SunWait(const char *lat, const char *lon, double angle) :  twilightAngle{angle}
@@ -235,8 +235,8 @@ class SunWait
      * 
      * With thise versions a char* is used and the library attempts to parse the information.
      * 
-     * @param lat 
-     * @param lon 
+     * @param lat Geographical latitude 
+     * @param lon Geographical longitude 
      * @return Return true when successful.
      */
         bool setCoordinates(const char *lat, const char *lon);
@@ -257,7 +257,7 @@ class SunWait
      * @param reportSunrise When true sun rises are considered
      * @param reportSunset  When true sun sets are considered
      * @param waitptr When provided the wait time in seconds is written to the variable which is pointed to instead of waiting
-     * @return int 
+     * @return Returns EXIT_OK or EXIT_ERROR
      */
         int wait (bool reportSunrise = true, bool reportSunset = true, unsigned long *waitptr = nullptr);
     /**
