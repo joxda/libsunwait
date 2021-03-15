@@ -34,10 +34,11 @@
 // 06-05-2015  IFC  0.8  Fix polar calculations
 //
 
-//#include <time.h>
+#include <time.h>
 
 #include <vector>
 #include <utility>
+#include <cstdio>
 
 #ifndef LIBSUNWAIT_HPP
 #define LIBSUNWAIT_HPP
