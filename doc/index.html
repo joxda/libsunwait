@@ -198,7 +198,7 @@ by a fixed amount from any of these.</p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude in decimal degrees (N positive, S negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimale degrees (E positive, W negative) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimal degrees (E positive, W negative) </p></li>
 </ul>
 </dd>
 </dl>
@@ -212,8 +212,8 @@ by a fixed amount from any of these.</p>
 <p>With thise versions a char* is used and the library attempts to parse the information.</p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
 </ul>
 </dd>
 </dl>
@@ -227,7 +227,7 @@ by a fixed amount from any of these.</p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude in decimal degrees (N positive, S negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimale degrees (E positive, W negative) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimal degrees (E positive, W negative) </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
 </ul>
 </dd>
@@ -242,8 +242,8 @@ by a fixed amount from any of these.</p>
 <p>With thise versions a char* is used and the library attempts to parse the information.</p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
 </ul>
 </dd>
@@ -274,8 +274,8 @@ by a fixed amount from any of these.</p>
 <dt><strong>Return</strong></dt><dd><p>Return true when successful. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
 </ul>
 </dd>
 </dl>
@@ -303,7 +303,7 @@ by a fixed amount from any of these.</p>
 <dd><p>Sleep until specified event occurs (sun rise or sun set or either) </p>
 <p>With a twilight angle and offset set, the corresponding event(s) will be queried.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>int </p>
+<dt><strong>Return</strong></dt><dd><p>Returns EXIT_OK or EXIT_ERROR </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">reportSunrise</span></code>: When true sun rises are considered </p></li>
