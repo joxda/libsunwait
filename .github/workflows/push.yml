@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest] #, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: libsunwait
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+          make
+      - name: archive results
+        uses: actions/upload-artifact@v1
+        with:
+          name: libsunwait-${{ matrix.os }}
+          path: build/
