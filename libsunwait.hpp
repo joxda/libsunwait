@@ -144,10 +144,10 @@ class SunWait
         double        twilightAngle = TWILIGHT_ANGLE_DAYLIGHT;  
 
     /// Printed output is in GMT/UTC (true) or localtime (false).
-        bool          utc;                                      
+        bool          utc = false;                                      
     
     /// When true, debug information is printed to the standard output.
-        bool          debug;                                    
+        bool          debug = false;                                    
 
     /**
      * @brief Construct a new SunWait object with default geographical coordinates and twilight angle

@@ -389,8 +389,8 @@ void SunWait::print_a_time( const time_t *pMidnightTimet, const double  pEventHo
     {
         myUtcTime   (pMidnightTimet, &tmpTm);
         tmpTm.tm_min += (int) (pEventHour * 60.0);
-        time_t x = mktime (&tmpTm);
-        myUtcTime   (&x, &tmpTm);
+        /*time_t x = */mktime (&tmpTm);
+        //myUtcTime   (&x, &tmpTm);
     }
     else
     {
@@ -723,7 +723,7 @@ time_t SunWait::targetTime(int year, int mon, int mday)
     }
     if (debug) printf ("Debug: Target  year set to: %u\n", targetTm.tm_year);
 
-    if (__FINITE_MATH_ONLY__ != NOT_SET)
+    if (mon != NOT_SET)
     {
         if (mon < 1 || mon > 12)
         {
