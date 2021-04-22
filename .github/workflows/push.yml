@@ -2,13 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-    
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -17,7 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: libsunwait
         run: |
           mkdir -p build
@@ -27,16 +26,15 @@ jobs:
           make package
 
       - name: archive results mac
-        if: runner.os !='Linux' 
+        if: runner.os !='Linux'
         uses: actions/upload-artifact@v1
         with:
           name: libsunwait-1.0.0-${{ matrix.os }}
           path: build/sunwait-1.0.0-Darwin.tar.gz
 
       - name: archive results linux
-        if:  runner.os =='Linux' 
+        if: runner.os =='Linux'
         uses: actions/upload-artifact@v1
         with:
           name: libsunwait-1.0.0-${{ matrix.os }}
           path: build/sunwait-1.0.0-${{ runner.os }}.tar.gz
- 

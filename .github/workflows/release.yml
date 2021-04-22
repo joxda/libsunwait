@@ -1,11 +1,10 @@
-name:  create release
-
+name: create release
 
 on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+      - "v*" # Push events to matching v*, i.e. v1.0, v20.15.10
 
 env:
   version: 1.0.0
@@ -45,8 +44,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
- 
+
       - name: libsunwait
         run: |
           mkdir -p build
@@ -55,38 +53,37 @@ jobs:
           make
           make package
       - name: unpack
-        if: runner.os != 'Linux' 
+        if: runner.os != 'Linux'
         run: |
           tar xzvf build/sunwait-${{ env.version }}-Darwin.tar.gz
           zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Darwin LICENSE README.md 
           ls
           pwd
       - name: unpack
-        if: runner.os =='Linux' 
+        if: runner.os =='Linux'
         run: |
           tar xzvf build/sunwait-${{ env.version }}-Linux.tar.gz      
-          zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Linux LICENSE README.md 
+          zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Linux LICENSE README.md
       - name: Upload Release Asset
-        if: runner.os =='Linux' 
-        id: upload-release-asset-linux 
+        if: runner.os =='Linux'
+        id: upload-release-asset-linux
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ needs.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: /home/runner/work/libsunwait/libsunwait/libsunwait-${{ env.version }}-${{ matrix.os }}.zip
           asset_name: libsunwait-${{ env.version }}-${{ matrix.os }}.zip
           asset_content_type: application/zip
 
       - name: Upload Release Asset
-        if: runner.os !='Linux' 
+        if: runner.os !='Linux'
         id: upload-release-asset-macos
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ needs.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: /Users/runner/work/libsunwait/libsunwait/libsunwait-${{ env.version }}-${{ matrix.os }}.zip
           asset_name: libsunwait-${{ env.version }}-${{ matrix.os }}.zip
           asset_content_type: application/zip
-

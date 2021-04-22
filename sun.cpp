@@ -141,7 +141,7 @@ SunArc Sun::riset (unsigned long daysSince2000)
     if (debug)
     {
         printf ("Debug: sunriset.cpp: Sun directly south: %f UTC, Diurnal Arc = %f hours\n", southHour, diurnalArc);
-        printf ("Debug: sunriset.cpp: Days since 2000: %li\n", daysSince2000);
+        printf ("Debug: sunriset.cpp: Days since 2000: %ul\n", daysSince2000);
         if (diurnalArc >= 24.0) printf ("Debug: sunriset.cpp: No rise or set: Midnight Sun\n");
         if (diurnalArc <=  0.0) printf ("Debug: sunriset.cpp: No rise or set: Polar Night\n");
     }
@@ -197,7 +197,7 @@ void Sun::sun_RA_dec (const double d, double *RA, double *dec, double *r)
     /* Compute ecliptic rectangular coordinates */
     xs = *r * cosd(lon);
     ys = *r * sind(lon);
-    zs = 0; /* because the Sun is always in the ecliptic plane! */
+    //zs = 0; /* because the Sun is always in the ecliptic plane! */
 
     /* Compute obliquity of ecliptic (inclination of Earth's axis) */
     obl_ecl = 23.4393 - 3.563E-7 * d;

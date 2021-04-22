@@ -272,7 +272,6 @@ inline double getUtcBiasHours (const time_t *pTimet)
     /* Linux code: Start */
 #if defined __linux__ || defined __APPLE__
     char buffer [80];
-    signed long int tmpLong = 0;
 
     mktime (&utcTm); // Let "mktime()" do it's magic
 
@@ -280,7 +279,7 @@ inline double getUtcBiasHours (const time_t *pTimet)
 
     if (strlen (buffer) > 0 && myIsNumber (buffer))
     {
-        tmpLong = atol (buffer);
+        signed long int tmpLong = atol (buffer);
         utcBiasHours = (int)(tmpLong / 100 + (tmpLong % 100) / 60.0);
     }
 #endif
@@ -389,8 +388,8 @@ void SunWait::print_a_time( const time_t *pMidnightTimet, const double  pEventHo
     {
         myUtcTime   (pMidnightTimet, &tmpTm);
         tmpTm.tm_min += (int) (pEventHour * 60.0);
-        time_t x = mktime (&tmpTm);
-        myUtcTime   (&x, &tmpTm);
+        /*time_t x = */mktime (&tmpTm);
+        //myUtcTime   (&x, &tmpTm);
     }
     else
     {
@@ -563,7 +562,7 @@ void SunWait::print_list (const int days, const int year, const int month, const
 
     Sun sun(longitude, latitude, twilightAngle);
 
-    for (unsigned int day = 0; day < days; day++)
+    for (unsigned int dday = 0; dday < days; day++)
     {
         SunArc  tmpTarget = sun.riset(t2000);
         print_times
@@ -716,34 +715,34 @@ time_t SunWait::targetTime(int year, int mon, int mday)
     {
         if (year < 0 || year > 99)
         {
-            printf ("Error: \"Year\" must be between 0 and 99: %u\n", year);
+            printf ("Error: \"Year\" must be between 0 and 99: %d\n", year);
             exit (EXIT_ERROR);
         }
         targetTm.tm_year = year + 100;
     }
-    if (debug) printf ("Debug: Target  year set to: %u\n", targetTm.tm_year);
+    if (debug) printf ("Debug: Target  year set to: %d\n", targetTm.tm_year);
 
     if (mon != NOT_SET)
     {
         if (mon < 1 || mon > 12)
         {
-            printf ("Error: \"Month\" must be between 1 and 12: %u\n", mon);
+            printf ("Error: \"Month\" must be between 1 and 12: %d\n", mon);
             exit (EXIT_ERROR);
         }
         targetTm.tm_mon = mon - 1; // We need month 0 to 11, not 1 to 12
     }
-    if (debug) printf ("Debug: Target   mon set to: %u\n", targetTm.tm_mon);
+    if (debug) printf ("Debug: Target   mon set to: %d\n", targetTm.tm_mon);
 
     if (mday != NOT_SET)
     {
         if (mday < 1 || mday > 31)
         {
-            printf ("Error: \"Day of month\" must be between 1 and 31: %u\n", mday);
+            printf ("Error: \"Day of month\" must be between 1 and 31: %d\n", mday);
             exit (EXIT_ERROR);
         }
         targetTm.tm_mday = mday;
     }
-    if (debug) printf ("Debug: Target  mday set to: %u\n", targetTm.tm_mday);
+    if (debug) printf ("Debug: Target  mday set to: %d\n", targetTm.tm_mday);
 
     // Set target time to the start of the UTC day
     targetTm.tm_hour = 0;
@@ -904,17 +903,17 @@ int SunWait::wait (bool reportSunrise, bool reportSunset, unsigned long *waitptr
     if      (waitSetYesterday > 0)
     {
         double diurnalArc = yesterday.diurnalArcWithOffset (offsetHour);
-        exitPolar = yesterday.diurnalArc <= 0.0 || yesterday.diurnalArc >= 24.0;
+        exitPolar = diurnalArc <= 0.0 || diurnalArc >= 24.0;
     }
     else if (waitSetToday     > 0)
     {
         double diurnalArc = today.diurnalArcWithOffset (offsetHour);
-        exitPolar = today.diurnalArc <= 0.0 || today.diurnalArc >= 24.0;
+        exitPolar = diurnalArc <= 0.0 || diurnalArc >= 24.0;
     }
     else
     {
         double diurnalArc = tomorrow.diurnalArcWithOffset (offsetHour);
-        exitPolar = tomorrow.diurnalArc <= 0.0 || tomorrow.diurnalArc >= 24.0;
+        exitPolar = diurnalArc <= 0.0 || diurnalArc >= 24.0;
     }
 
     if (exitPolar)
