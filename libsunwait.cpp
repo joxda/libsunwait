@@ -562,7 +562,7 @@ void SunWait::print_list (const int days, const int year, const int month, const
 
     Sun sun(longitude, latitude, twilightAngle);
 
-    for (unsigned int dday = 0; dday < days; day++)
+    for (unsigned int dday = 0; dday < days; dday++)
     {
         SunArc  tmpTarget = sun.riset(t2000);
         print_times
