@@ -42,5 +42,8 @@ int main (int argc, char *argv[])
     sw.generate_report();
     sw.debug = true;
     sw.wait();
+    sw.debug = false;
+    sw.utc=true;
+    sw.generate_report();
     return 0;
 }

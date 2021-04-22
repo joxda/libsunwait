@@ -723,7 +723,7 @@ time_t SunWait::targetTime(int year, int mon, int mday)
     }
     if (debug) printf ("Debug: Target  year set to: %u\n", targetTm.tm_year);
 
-    if (__FINITE_MATH_ONLY__ != NOT_SET)
+    if (mon != NOT_SET)
     {
         if (mon < 1 || mon > 12)
         {
