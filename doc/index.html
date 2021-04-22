@@ -184,7 +184,7 @@ by a fixed amount from any of these.</p>
 <p>The geographical coordinates should be set (e.g. via the constructor) and optionally the twilight angle and fixed offset can be specified.</p>
 <p>There are functions for waiting for sunrise or sunset (wait) listing such event times (list and print_list) reporting the day length and twilight times (report) and reporting whether it is day or night (poll) </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N7SunWait7SunWaitEv">
 <span id="_CPPv3N7SunWait7SunWaitEv"></span><span id="_CPPv2N7SunWait7SunWaitEv"></span><span id="SunWait::SunWait"></span><span class="target" id="class_sun_wait_1a08be6c1c73fe43aa2674fb3bf3656938"></span><code class="sig-name descname"><span class="pre">SunWait</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="pre">=</span> <span class="pre">default</span><a class="headerlink" href="#_CPPv4N7SunWait7SunWaitEv" title="Permalink to this definition">¶</a><br /></dt>
@@ -195,14 +195,14 @@ by a fixed amount from any of these.</p>
 <dt id="_CPPv4N7SunWait7SunWaitEdd">
 <span id="_CPPv3N7SunWait7SunWaitEdd"></span><span id="_CPPv2N7SunWait7SunWaitEdd"></span><span id="SunWait::SunWait__double.double"></span><span class="target" id="class_sun_wait_1ae5e1df5a4c42e512ee727ed386338f60"></span><em class="property"><span class="pre">inline</span></em> <code class="sig-name descname"><span class="pre">SunWait</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">lat</span></em>, <span class="pre">double</span> <em><span class="pre">lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait7SunWaitEdd" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct a new <a class="reference internal" href="#class_sun_wait"><span class="std std-ref">SunWait</span></a> object with the requested geographical coordinates and the default twilight angle. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude in decimal degrees (N positive, S negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimal degrees (E positive, W negative) </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude in decimal degrees (N positive, S negative) </p></li>
+<li><p><strong>lon</strong> – Geographical longitude in decimal degrees (E positive, W negative) </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -210,29 +210,29 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait7SunWaitEPKcPKc"></span><span id="_CPPv2N7SunWait7SunWaitEPKcPKc"></span><span id="SunWait::SunWait__cCP.cCP"></span><span class="target" id="class_sun_wait_1ad7563ec1df3b8c234d7458f13083727b"></span><em class="property"><span class="pre">inline</span></em> <code class="sig-name descname"><span class="pre">SunWait</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lat</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait7SunWaitEPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct a new <a class="reference internal" href="#class_sun_wait"><span class="std std-ref">SunWait</span></a> object with the requested geographical coordinates and the default twilight angle. </p>
 <p>With thise versions a char* is used and the library attempts to parse the information.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude </p></li>
+<li><p><strong>lon</strong> – Geographical longitude </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N7SunWait7SunWaitEddd">
 <span id="_CPPv3N7SunWait7SunWaitEddd"></span><span id="_CPPv2N7SunWait7SunWaitEddd"></span><span id="SunWait::SunWait__double.double.double"></span><span class="target" id="class_sun_wait_1a2350daf29ba9840ded5fe66d21343a4f"></span><em class="property"><span class="pre">inline</span></em> <code class="sig-name descname"><span class="pre">SunWait</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">lat</span></em>, <span class="pre">double</span> <em><span class="pre">lon</span></em>, <span class="pre">double</span> <em><span class="pre">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait7SunWaitEddd" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct a new <a class="reference internal" href="#class_sun_wait"><span class="std std-ref">SunWait</span></a> object with the requested geographical coordinates and twilight angle. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude in decimal degrees (N positive, S negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimal degrees (E positive, W negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude in decimal degrees (N positive, S negative) </p></li>
+<li><p><strong>lon</strong> – Geographical longitude in decimal degrees (E positive, W negative) </p></li>
+<li><p><strong>angle</strong> – Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -240,29 +240,29 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait7SunWaitEPKcPKcd"></span><span id="_CPPv2N7SunWait7SunWaitEPKcPKcd"></span><span id="SunWait::SunWait__cCP.cCP.double"></span><span class="target" id="class_sun_wait_1a95a175483b0ad2b81084c7ee1bab0eed"></span><em class="property"><span class="pre">inline</span></em> <code class="sig-name descname"><span class="pre">SunWait</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lat</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lon</span></em>, <span class="pre">double</span> <em><span class="pre">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait7SunWaitEPKcPKcd" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Construct a new <a class="reference internal" href="#class_sun_wait"><span class="std std-ref">SunWait</span></a> object with the requested geographical coordinates and twilight angle. </p>
 <p>With thise versions a char* is used and the library attempts to parse the information.</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">angle</span></code>: Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude </p></li>
+<li><p><strong>lon</strong> – Geographical longitude </p></li>
+<li><p><strong>angle</strong> – Twilight angle (in decimal degrees, negative for the Sun below horizon) </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N7SunWait14setCoordinatesEdd">
 <span id="_CPPv3N7SunWait14setCoordinatesEdd"></span><span id="_CPPv2N7SunWait14setCoordinatesEdd"></span><span id="SunWait::setCoordinates__double.double"></span><span class="target" id="class_sun_wait_1a958e1ee130b900e79eea04ef06f9dec8"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">setCoordinates</span></code><span class="sig-paren">(</span><span class="pre">double</span> <em><span class="pre">lat</span></em>, <span class="pre">double</span> <em><span class="pre">lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait14setCoordinatesEdd" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update the geographical coordinates. </p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude in decimal degrees (N positive, S negative) </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude in decimal degrees (E positive, S negative) </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude in decimal degrees (N positive, S negative) </p></li>
+<li><p><strong>lon</strong> – Geographical longitude in decimal degrees (E positive, S negative) </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -270,31 +270,31 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait14setCoordinatesEPKcPKc"></span><span id="_CPPv2N7SunWait14setCoordinatesEPKcPKc"></span><span id="SunWait::setCoordinates__cCP.cCP"></span><span class="target" id="class_sun_wait_1a2bc01faabaf7fa2a35c5ec73f61595d4"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">setCoordinates</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lat</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">char</span> <span class="pre">*</span><em><span class="pre">lon</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait14setCoordinatesEPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Update the geographical coordinates. </p>
 <p>With thise versions a char* is used and the library attempts to parse the information.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Return true when successful. </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lat</span></code>: Geographical latitude </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">lon</span></code>: Geographical longitude </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> – Geographical latitude </p></li>
+<li><p><strong>lon</strong> – Geographical longitude </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Return true when successful. </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N7SunWait4pollEK6time_t">
 <span id="_CPPv3N7SunWait4pollEK6time_t"></span><span id="_CPPv2N7SunWait4pollEK6time_t"></span><span id="SunWait::poll__time_tC"></span><span class="target" id="class_sun_wait_1a1c15effe1c0af0e4b529320c4b36dad3"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">poll</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">time_t</span> <em><span class="pre">ttime</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait4pollEK6time_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Poll whether it is day or night for a given time. </p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Returns one if the return codes EXIT_DAY or EXIT_NIGHT </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ttime</strong> – Time for the request (optional). By default the current time is used. </p>
 </dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ttime</span></code>: Time for the request (optional). By default the current time is used. </p></li>
-</ul>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns one if the return codes EXIT_DAY or EXIT_NIGHT </p>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -302,17 +302,18 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait4waitEbbPm"></span><span id="_CPPv2N7SunWait4waitEbbPm"></span><span id="SunWait::wait__b.b.unsigned-lP"></span><span class="target" id="class_sun_wait_1ae5aa4cf0634b1d027352e829f0f9fa6c"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">wait</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">reportSunrise</span></em> <span class="pre">=</span> <span class="pre">true</span>, <span class="pre">bool</span> <em><span class="pre">reportSunset</span></em> <span class="pre">=</span> <span class="pre">true</span>, <span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">*</span><em><span class="pre">waitptr</span></em> <span class="pre">=</span> <span class="pre">nullptr</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait4waitEbbPm" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sleep until specified event occurs (sun rise or sun set or either) </p>
 <p>With a twilight angle and offset set, the corresponding event(s) will be queried.</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Returns EXIT_OK or EXIT_ERROR </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">reportSunrise</span></code>: When true sun rises are considered </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reportSunset</span></code>: When true sun sets are considered </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">waitptr</span></code>: When provided the wait time in seconds is written to the variable which is pointed to instead of waiting </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reportSunrise</strong> – When true sun rises are considered </p></li>
+<li><p><strong>reportSunset</strong> – When true sun sets are considered </p></li>
+<li><p><strong>waitptr</strong> – When provided the wait time in seconds is written to the variable which is pointed to instead of waiting </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns EXIT_OK or EXIT_ERROR </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -320,15 +321,15 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait15generate_reportEiii"></span><span id="_CPPv2N7SunWait15generate_reportEiii"></span><span id="SunWait::generate_report__i.i.i"></span><span class="target" id="class_sun_wait_1add87cc3f08ce039dc3e399d46c7713ae"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">generate_report</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">year</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span>, <span class="pre">int</span> <em><span class="pre">mon</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span>, <span class="pre">int</span> <em><span class="pre">mday</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait15generate_reportEiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This replicates the generate report of the original sunwait command line executable. </p>
 <p>A report contatining the day length and twilight timings for a given date (today by default) are printed to the standard output. Optionally the starting date can be given (year, month, day).</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>: Specify the year </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mon</span></code>: Specify the month </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mday</span></code>: Specify the day </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> – Specify the year </p></li>
+<li><p><strong>mon</strong> – Specify the month </p></li>
+<li><p><strong>mday</strong> – Specify the day </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -336,16 +337,16 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait10print_listEKiiii"></span><span id="_CPPv2N7SunWait10print_listEKiiii"></span><span id="SunWait::print_list__iC.i.i.i"></span><span class="target" id="class_sun_wait_1abe8ecc97b0fb71f2ccc0824f024f3098"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">print_list</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">int</span> <em><span class="pre">days</span></em>, <span class="pre">int</span> <em><span class="pre">year</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span>, <span class="pre">int</span> <em><span class="pre">mon</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span>, <span class="pre">int</span> <em><span class="pre">mday</span></em> <span class="pre">=</span> <span class="pre">NOT_SET</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait10print_listEKiiii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This replicates the list command of the original sunwait executable. </p>
 <p>Prints the time (GMT or local) the event occurs for a given date (and a number of following days) to the standard output. Optionally the starting date can be given (year, month, day).</p>
-<p><dl class="simple">
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">days</span></code>: Number of days to report </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>: Specify the year </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mon</span></code>: Specify the month </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mday</span></code>: Specify the day </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>days</strong> – Number of days to report </p></li>
+<li><p><strong>year</strong> – Specify the year </p></li>
+<li><p><strong>mon</strong> – Specify the month </p></li>
+<li><p><strong>mday</strong> – Specify the day </p></li>
 </ul>
 </dd>
 </dl>
-</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -353,23 +354,24 @@ by a fixed amount from any of these.</p>
 <span id="_CPPv3N7SunWait4listEKiKiKii"></span><span id="_CPPv2N7SunWait4listEKiKiKii"></span><span id="SunWait::list__iC.iC.iC.i"></span><span class="target" id="class_sun_wait_1a9ac2e164dbc4d7afb86cb3c7e46378c7"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">pair</span><span class="pre">&lt;</span><span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">time_t</span><span class="pre">&gt;</span><span class="pre">,</span> <span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">time_t</span><span class="pre">&gt;</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">list</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">int</span> <em><span class="pre">days</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">int</span> <em><span class="pre">year</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">int</span> <em><span class="pre">month</span></em>, <span class="pre">int</span> <em><span class="pre">day</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7SunWait4listEKiKiKii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This will return a pair of vectors with the times (time_t) of requested events. </p>
 <p>This is similar to the print_list function, but the returned times can easily be processed by the main program. If for any given day polar day or night apply, both event times are set to POLAR_DAY or POLAR_NIGHT, respectively. Optionally the starting date can be given (year, month, day).</p>
-<p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>std::pair&lt;std::vector&lt;time_t&gt;, std::vector&lt;time_t&gt;&gt; </p>
-</dd>
-<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">days</span></code>: Number of days to report </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code>: Specify the year </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mon</span></code>: Specify the month </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mday</span></code>: Specify the day </p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>days</strong> – Number of days to report </p></li>
+<li><p><strong>year</strong> – Specify the year </p></li>
+<li><p><strong>mon</strong> – Specify the month </p></li>
+<li><p><strong>mday</strong> – Specify the day </p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>std::pair&lt;std::vector&lt;time_t&gt;, std::vector&lt;time_t&gt;&gt; </p>
+</dd>
 </dl>
-</p>
 </dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Public Members</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt id="_CPPv4N7SunWait10offsetHourE">
 <span id="_CPPv3N7SunWait10offsetHourE"></span><span id="_CPPv2N7SunWait10offsetHourE"></span><span id="SunWait::offsetHour__double"></span><span class="target" id="class_sun_wait_1ab9029609542edc2232d24fa3a22f57e4"></span><span class="pre">double</span> <code class="sig-name descname"><span class="pre">offsetHour</span></code> <span class="pre">=</span> <span class="pre">NO_OFFSET</span><a class="headerlink" href="#_CPPv4N7SunWait10offsetHourE" title="Permalink to this definition">¶</a><br /></dt>
@@ -406,7 +408,7 @@ by a fixed amount from any of these.</p>
 <dd><p>Defines for twilight angles. </p>
 <p>long description </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Defines</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
 <dt id="c.TWILIGHT_ANGLE_DAYLIGHT">
 <span class="target" id="group___twilight_angles_1ga85603c913d2dce19cafadda69a28a685"></span><code class="sig-name descname"><span class="pre">TWILIGHT_ANGLE_DAYLIGHT</span></code><a class="headerlink" href="#c.TWILIGHT_ANGLE_DAYLIGHT" title="Permalink to this definition">¶</a><br /></dt>
@@ -440,7 +442,7 @@ by a fixed amount from any of these.</p>
 <dd><p>Defines for return codes. </p>
 <p>long description </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Defines</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
 <dt id="c.EXIT_OK">
 <span class="target" id="group___return_codes_1gae73ebe3bed25b37556b570d7e81722c5"></span><code class="sig-name descname"><span class="pre">EXIT_OK</span></code><a class="headerlink" href="#c.EXIT_OK" title="Permalink to this definition">¶</a><br /></dt>
@@ -474,7 +476,7 @@ by a fixed amount from any of these.</p>
 <dd><p>Defines for polar day and night in the list function. </p>
 <p>long description </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Defines</p>
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
 <dl class="cpp macro">
 <dt id="c.POLAR_DAY">
 <span class="target" id="group___polar_day_night_1ga3bc73b82426a7e287395a19fa2f56b32"></span><code class="sig-name descname"><span class="pre">POLAR_DAY</span></code><a class="headerlink" href="#c.POLAR_DAY" title="Permalink to this definition">¶</a><br /></dt>
