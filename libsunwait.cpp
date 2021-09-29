@@ -23,7 +23,7 @@
   the GPLv3 and written by Dan Risacher based on codes by Paul Schlyter and
   with contributions of others mentioned in the original code which can be
   found in https://github.com/risacher/sunwait
-  
+
 *******************************************************************************/
 
 // sunwait.cpp : Defines the entry point for the console application.
