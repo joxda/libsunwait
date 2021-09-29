@@ -29,12 +29,12 @@ jobs:
         if: runner.os !='Linux'
         uses: actions/upload-artifact@v1
         with:
-          name: libsunwait-1.0.0-${{ matrix.os }}
-          path: build/sunwait-1.0.0-Darwin.tar.gz
+          name: libsunwait-1.0.1-${{ matrix.os }}
+          path: build/sunwait-1.0.1-Darwin.tar.gz
 
       - name: archive results linux
         if: runner.os =='Linux'
         uses: actions/upload-artifact@v1
         with:
-          name: libsunwait-1.0.0-${{ matrix.os }}
-          path: build/sunwait-1.0.0-${{ runner.os }}.tar.gz
+          name: libsunwait-1.0.1-${{ matrix.os }}
+          path: build/sunwait-1.0.1-${{ runner.os }}.tar.gz

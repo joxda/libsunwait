@@ -39,7 +39,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, ubuntu-16.04, ubuntu-20.04, macos-latest] #, macos-11.0]
+        os: [ubuntu-18.04, ubuntu-20.04, macos-latest] #, macos-11.0]
 
     steps:
       - name: Checkout code
@@ -55,14 +55,14 @@ jobs:
       - name: unpack
         if: runner.os != 'Linux'
         run: |
-          tar xzvf build/sunwait-${{ env.version }}-Darwin.tar.gz
+          tar xzvf ~/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Darwin.tar.gz
           zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Darwin LICENSE README.md 
           ls
           pwd
       - name: unpack
         if: runner.os =='Linux'
         run: |
-          tar xzvf build/sunwait-${{ env.version }}-Linux.tar.gz      
+          tar xzvf ~/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Linux.tar.gz      
           zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Linux LICENSE README.md
       - name: Upload Release Asset
         if: runner.os =='Linux'
