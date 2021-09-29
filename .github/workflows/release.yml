@@ -55,14 +55,14 @@ jobs:
       - name: unpack
         if: runner.os != 'Linux'
         run: |
-          tar xzvf ~/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Darwin.tar.gz
+          tar xzvf ~/work/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Darwin.tar.gz
           zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Darwin LICENSE README.md 
           ls
           pwd
       - name: unpack
         if: runner.os =='Linux'
         run: |
-          tar xzvf ~/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Linux.tar.gz      
+          tar xzvf ~/work/libsunwait/libsunwait/build/sunwait-${{ env.version }}-Linux.tar.gz      
           zip -r libsunwait-${{ env.version }}-${{ matrix.os }}.zip sunwait-${{ env.version }}-Linux LICENSE README.md
       - name: Upload Release Asset
         if: runner.os =='Linux'
