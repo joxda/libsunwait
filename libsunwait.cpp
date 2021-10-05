@@ -562,7 +562,7 @@ void SunWait::print_list (const int days, const int year, const int month, const
 
     Sun sun(longitude, latitude, twilightAngle);
 
-    for (unsigned int dday = 0; dday < days; dday++)
+    for (int dday = 0; dday < days; dday++)
     {
         SunArc  tmpTarget = sun.riset(t2000);
         print_times
@@ -614,7 +614,7 @@ std::pair<std::vector<time_t>, std::vector<time_t>> SunWait::list (const int day
     std::vector<time_t> sets;
     Sun sun(longitude, latitude, twilightAngle);
 
-    for (unsigned int d = 0; d < days; d++)
+    for (int d = 0; d < days; d++)
     {
         time_t targetTimet = targetTime(year, month, day);
         if (debug) myDebugTime ("Target:", &targetTimet);
