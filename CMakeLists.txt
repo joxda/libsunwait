@@ -9,6 +9,11 @@ add_library(sunwait::sunwait ALIAS sunwait)
 set_property(TARGET sunwait PROPERTY CXX_STANDARD 11 )
 set_property(TARGET sunwait PROPERTY PUBLIC_HEADER libsunwait.hpp)
 set_property(TARGET sunwait PROPERTY VERSION 1.0.2)
+target_include_directories(
+    sunwait
+    INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    INTERFACE $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
 add_compile_options( -Wall -Wextra -Wpedantic -Werror )
 
 if( CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR )
